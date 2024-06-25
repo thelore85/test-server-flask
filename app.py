@@ -20,9 +20,6 @@ from flask import Flask
 
 app = Flask(__name__)
 
-print('running server app')
-
 @app.routes("/")
 def main():
-    print('response')
     return 'server is running on main routh'
