@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://default:kVtLIcRm3o4s@ep-twilight-bird-a2o7tszp.eu-central-1.aws.neon.tech:5432/verceldb?sslmode=require"
 
 # Initialize SQLAlchemy and defining a simple Book model
-# db = SQLAlchemy(app)
+db = SQLAlchemy(app)
 
 #setting
 app.register_blueprint(api, url_prefix='/api')
@@ -24,8 +24,8 @@ setup_admin(app)
 def index():
     return render_template('index.html')
 
-# with app.app_context():
-#     db.create_all()
+with app.app_context():
+    db.create_all()
 
 if __name__ == "__main__":
     app.run(debug=True)
