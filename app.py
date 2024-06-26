@@ -6,7 +6,6 @@ from api.admin import setup_admin
 from api.routes import api
 
 # App - server
-
 app = Flask(__name__)
 
 #setting
