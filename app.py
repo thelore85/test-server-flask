@@ -4,23 +4,10 @@ from flask_sqlalchemy import SQLAlchemy
 # file api import
 from api.admin import setup_admin
 from api.routes import api
-from api.model import db
 
 # App - server
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://default:kVtLIcRm3o4s@ep-twilight-bird-a2o7tszp.eu-central-1.aws.neon.tech:5432/verceldb?sslmode=require"
-
-# Initialize SQLAlchemy and defining a simple Book model
-db = SQLAlchemy(app)
-
-class Book(db.Model):
-    book_id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String)
-
-# Create database tables in the PostgreSQL database
-with app.app_context():
-    db.create_all()
 
 #setting
 app.register_blueprint(api, url_prefix='/api')
