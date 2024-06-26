@@ -3,7 +3,7 @@ from flask import Flask, render_template
 # file api import
 from api.admin import setup_admin
 from api.routes import api
-# from api.model import db
+from api.model import db
 
 # App - server
 def create_app():
