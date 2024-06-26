@@ -4,9 +4,16 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-flask="*"
+flask = "*"
+flask-sqlalchemy = "*"
+flask-migrate = "*"
+flask-admin = "*"
+flask-jwt-extended = "*"
 
 [dev-packages]
 
 [requires]
 python_version = "3.12"
+
+[scripts]
+init = "flask db init"
