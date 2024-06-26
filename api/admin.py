@@ -17,7 +17,10 @@ def setup_admin(app):
         column_display_pk = True
         form_columns = ['name', 'address', 'city', 'online_booking', 'postal_code', 'province', 'owner', 'status', 'creation_date']
 
-
-    admin.add_view(ProsAdminView(Pros, db.session))
+    admin.add_view(ProsAdminView(Pros, db.session))    
     admin.add_view(ClinicsAdminView(Clinics, db.session))
-    
+
+
+
+
+
